@@ -12,6 +12,14 @@ class Blog
 		sorted_by_date = @blog_posts.sort_by {|post| post.date}
 
 		counter = 0
+		page_counter = 0 
+		page_numbers = []
+		number_of_pages = (sorted_by_date.length%3)+1
+
+		while page_counter < number_of_pages
+			page_counter = page_counter + 1
+			page_numbers.push(page_counter)
+		end
 
 		sorted_by_date.each do |post|
 			counter = counter + 1
@@ -23,19 +31,12 @@ class Blog
 			puts "***************"
 			puts post.text
 			puts "---------------"
+			if  counter%3 == 0 || counter == sorted_by_date.length
+				p page_numbers.join(' ')
+				puts "> next"
+			end
+
 		end
-
-		page_num = (counter%3)+1
-		new_counter = 0 
-		page_numbers = []
-		while new_counter < page_num do 
-			new_counter = new_counter + 1
-			page_numbers.push(new_counter)
-		end
-
-		p page_numbers.join(" ")
-
-		puts "> next"
 
 	end
 
