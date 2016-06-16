@@ -42,6 +42,10 @@ class Game
 			run_game
 		end
 
+		if(input == "exit")
+			break
+		end
+
 	end
 
 end
