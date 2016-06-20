@@ -10,7 +10,15 @@ class ChessGame
 		#puts piece.x
 		#puts piece.y
 		@pieces_arr[x_pos].push(y_pos)
-
 	end
 
+	def moving_off(new_x, new_y)
+		if(new_x =< 8 || new_x >= 1)
+			true
+		elsif(new_y =< 8 || new_y >= 1)
+			true
+		else
+			false
+		end
+	end
 end
