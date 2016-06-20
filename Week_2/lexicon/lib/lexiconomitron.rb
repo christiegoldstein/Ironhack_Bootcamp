@@ -18,4 +18,16 @@ class Lexiconomitron
 		eat_arr = eat_t(new_arr.join(","))
 		eat_arr.split(",")
 	end
+
+	def oompa_loompa(arr)
+
+		new_arr = arr.select do |word|
+			word.length < 4
+	
+		end
+
+		eat_arr = eat_t(new_arr.join(","))
+		eat_arr.split(",")
+
+	end
 end
