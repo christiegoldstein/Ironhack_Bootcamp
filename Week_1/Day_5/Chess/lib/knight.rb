@@ -14,9 +14,9 @@ class Knight
 		black_y_diff = y - new_y
 		white_y_diff = new_y - y
 
-		if(color.downcase == "black" && black_y_diff == 2 && (new_x == x + 1 || new_x == x -1))
+		if(color.downcase == "black" && black_y_diff == 2 && (new_x == x + 1 || new_x == x - 1))
 			true
-		elsif(color.downcase == "white" && white_y_diff == 2 && (new_x == x + 1 || new_x == x -1))
+		elsif(color.downcase == "white" && white_y_diff == 2 && (new_x == x + 1 || new_x == x - 1))
 			true
 		else 
 			false
