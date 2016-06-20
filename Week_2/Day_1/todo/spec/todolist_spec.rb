@@ -1,5 +1,6 @@
 require_relative("../lib/task.rb")
 require_relative("../lib/todolist.rb")
+require("yaml")
 
 RSpec.describe TodoList do 
 	before :each do @todo = TodoList.new("Jack") end
@@ -73,15 +74,19 @@ RSpec.describe TodoList do
     	end
 	end
 
-	# describe "#save" do
-	# 	it "save and then load" do
-	# 		task = Task.new("Walk the dog")
-	# 		task2 = Task.new("Buy the milk")
-	# 		task3 = Task.new("Make my todo list into a web app")
-	# 		@todo.save
-	# 		@todo.load_tasks
-	# 		expect(@todo.tasks.length).to eq(3)
-	# 	end
-	# end
+	describe "#save" do
+		it "save before loading" do
+			task = Task.new("Walk the dog")
+			@todo.add_task(task)
+			task2 = Task.new("Buy the milk")
+			@todo.add_task(task2)
+			task3 = Task.new("Make my todo list into a web app")
+			@todo.add_task(task3)
+			@todo.save
+			expect(task.content).not_to eq("")
+		end
+	end
+
+	#@todo.load_tasks
 
 end
