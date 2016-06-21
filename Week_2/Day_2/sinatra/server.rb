@@ -3,7 +3,7 @@
 require "sinatra"
 
 get "/" do
-	"My first Sinatra app."
+	erb(:home)
 end
 
 get "/hi" do
