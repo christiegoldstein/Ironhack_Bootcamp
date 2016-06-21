@@ -1,11 +1,17 @@
 require "sinatra"
 require "artii"
 
-get "/ascii/:word/?:font?" do
+get "/ascii/:word/?:font?/?:secret?" do
 	#"Hello #{params[:word]}, #{params[:font]}"
 	@word = params[:word]
 	@font = params[:font]
-	if @font == nil
+	@secret = params[:secret]
+	
+	if @word == "unicorn" && @font == "special" && @secret == "secret"
+		ascifier = Artii::Base.new(:font => "cosmic")
+		@ascii_word = ascifier.asciify(@word)
+		erb(:fav_animal_ascii)
+	elsif @font == nil
 		ascifier = Artii::Base.new(:font => "doh")
 		@ascii_word = ascifier.asciify(@word)
 		erb(:ascii_page)
