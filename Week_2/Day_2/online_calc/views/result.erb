@@ -1,0 +1,16 @@
+<!-- views/result.erb -->
+<h1>Online Calculator</h1>
+
+<h2>Result</h2>
+
+<p>The result was <%= @final %>. </p>
+
+
+<form method="POST" action="/save_to_memory">
+  <input type="hidden"
+      name="result" value="<%= @final %>">
+
+  <button type="submit" name="result" value="<%= @final %>">
+    Save this result for later
+  </button>
+</form>
