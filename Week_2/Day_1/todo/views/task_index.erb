@@ -6,9 +6,11 @@
 
 	<ul>
 		<% @task_list.each do |task| %>
-		
-			<li><%=task.content%></li>
-		
+			<%if task.completed? %>
+				<li><%=task.content%> <p>Completed!<p></li>
+			<% else %>
+				<li><%=task.content%></li><a href = "/complete_task/<%= task.id%>">Complete Task</a>
+			<% end %>
 		<% end %>
 	</ul>
 
