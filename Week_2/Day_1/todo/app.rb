@@ -1,29 +1,42 @@
 #app.rb
+require 'sinatra'
+require 'sinatra/reloader'
+
 require_relative("lib/task.rb")
+require_relative("lib/todolist.rb")
+
+todo_list = TodoList.new("Josh")
 
 
-task = Task.new("Buy the milk")
-p task.completed?
-# false
-task.complete!
-p task.completed?
- task.makeincomplete!
-p task.completed?
-# true
-# 1
-task2 = Task.new("Wash the car")
-#puts task2.id
-# 2
+get "/" do
+	erb(:home)
+end
 
+get "/task" do
+	@task_list = todo_list.tasks
+	erb(:task_index)
+end
 
-task = Task.new("Buy the dog")
-puts task.content 
-# Buy the dog
-task2 = Task.new("Walk the milk")
-puts task2.content 
-# Walk the milk
-task.update_content!("Buy the milk")
-task2.update_content!("Walk the dog")
-puts task.content 
-# Buy the milk
-puts task2.content
+get "/new_task" do
+	erb(:new_task)
+end
+
+post "/create_task" do
+	@task = params[:task]
+
+	new_task = Task.new(@task)
+	todo_list.add_task(new_task)
+	#todo_list.save
+    redirect to('/task')
+end
+
+get "/complete_task/:id" do
+	@id = params[:id]
+	task_find = todo_list.find_task_by_id(@id)
+	if task_find
+		@complete_task = task_find.complete!
+		puts "---------------------hello----------------"
+		puts @complete_task
+	end
+	redirect to('/task')
+end
