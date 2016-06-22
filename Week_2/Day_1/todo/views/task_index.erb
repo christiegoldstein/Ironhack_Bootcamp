@@ -1,0 +1,17 @@
+<center>
+
+	<h1>TodoList</h1>
+
+	<h2>Add Task</h2>
+
+	<ul>
+		<% @task_list.each do |task| %>
+		
+			<li><%=task.content%></li>
+		
+		<% end %>
+	</ul>
+
+	<a href = "/new_task">Click here to create a new task!</a>
+
+</center>
