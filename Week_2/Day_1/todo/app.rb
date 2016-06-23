@@ -35,8 +35,6 @@ get "/complete_task/:id" do
 	task_find = todo_list.find_task_by_id(@id)
 	if task_find
 		@complete_task = task_find.complete!
-		puts "---------------------hello----------------"
-		puts @complete_task
 	end
 	redirect to('/task')
 end
