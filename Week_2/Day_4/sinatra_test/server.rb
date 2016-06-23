@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/' do
-	"Hello, World!"
+	"Hi, World!"
 end
 
 get '/real_page' do
