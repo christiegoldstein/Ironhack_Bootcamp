@@ -10,7 +10,7 @@ blog.add_post Post.new("Second", Time.new(2016, 5, 7), "Second text")
 blog.add_post Post.new("Third", Time.new(2016, 4, 9), "Third text")
 
 get "/" do
-	@posts = blog.posts
+	@posts = blog.latest_date
 
 	erb(:home)
 end
@@ -31,7 +31,7 @@ post "/create_post" do
 end
 
 get "/post_details/:index" do
-	@posts = blog.posts
+	@posts = blog.latest_date
 	@index = params[:index].to_i
 	@selected_post = @posts[@index]
 
