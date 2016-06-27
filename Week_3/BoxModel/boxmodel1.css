@@ -1,4 +1,11 @@
 .box {
 	height: 150px;
 	background: #654678;
+	padding: 5px;
+}
+
+.content{
+	height: 100px;
+	background: #ff00ff;
+	margin: 20px;
 }
