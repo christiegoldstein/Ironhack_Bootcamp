@@ -1,0 +1,21 @@
+h1{
+	font-size: 40px;
+	font-weight: 10px;
+	color: #2f4f4f;
+}
+
+h2{
+	font-size: 32px;
+	font-weight: 10px;
+	color: #2f4f4f;
+}
+
+.date{
+	font-size: 18px;
+	color: #a9a9a9;
+}
+
+.author{
+	font-size: 20px;
+	color: #dc143c;
+}
