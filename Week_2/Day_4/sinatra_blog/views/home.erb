@@ -1,0 +1,16 @@
+
+<h1>Blog</h1>
+
+<h2>Posts:</h2>
+
+<h3>Click on Post to See Details</h3>
+
+<ul>
+<% @posts.each_with_index do |post, index| %>
+  
+  	<li><a href="/post_details/<%= index%>"><%= post.title %></a></li>
+ 
+<% end %>
+</ul>
+
+<a href="/new_post">Click here to make a new post</a>

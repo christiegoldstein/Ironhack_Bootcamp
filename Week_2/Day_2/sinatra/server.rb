@@ -2,9 +2,23 @@
 
 require "sinatra"
 require "sinatra/reloader"
+require "pry"
+
+enable(:sessions)
 
 get "/" do
 	erb(:home)
+end
+
+get "/sessions_test" do
+	@current_session = sesssion
+	erb(:display_the_session)
+end
+
+get "/sessions_test/:value" do
+	new_value = params[:value]
+	session[:new_session_value] = new_value
+	redirect to("/sessions_test")
 end
 
 get "/hi" do
@@ -41,5 +55,6 @@ get "/users/:username" do
 		erb(:whiskey_time)
 	else
 		erb(:user_profile)
+		binding.pry
 	end
 end

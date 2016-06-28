@@ -12,6 +12,10 @@ class Blog
     @posts.push(new_post)
   end
 
+  def latest_date
+    sorted_by_date = @posts.sort {|post1,post2| post2.date <=> post1.date}
+  end
+
   def go_next
     @page_start += 3
     @page_end += 3

@@ -87,6 +87,19 @@ RSpec.describe TodoList do
 		end
 	end
 
+	# describe "#load" do 
+	# 	it "load tasks later in the day" do
+	# 		task = Task.new("Walk the dog")
+	# 		@todo.add_task(task)
+	# 		task2 = Task.new("Buy the milk")
+	# 		@todo.add_task(task2)
+	# 		task3 = Task.new("Make my todo list into a web app")
+	# 		@todo.add_task(task3)
+	# 		@todo.load_tasks
+	# 		expect(@todo.tasks.length).to eq(3)
+	# 	end
+	# end
+
 	#@todo.load_tasks
 
 end
