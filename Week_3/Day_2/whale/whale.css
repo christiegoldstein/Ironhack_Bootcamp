@@ -28,7 +28,7 @@ body{
 	background-color: white;
 	border-radius: 3px;
     box-sizing: border-box;
-    height: 300px;
+    height: 420px;
     width: 500px;
     border-bottom: 1px solid #F5F5F5;
 }
@@ -81,7 +81,7 @@ body{
 }
 
 .comment_button{
-	margin-top: 10px;
+	margin-top: 15px;
 	background-color: transparent;
 	color: 	#2889D8;
     border-color: #2889D8;
@@ -90,3 +90,15 @@ body{
     border-radius: 24px;
     border-width: thin;
 }
+
+.circle{
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin: 20px 10px 0 15px;
+}
+
+.post_margin{
+	margin-top: 5px;
+}
+
