@@ -1,0 +1,24 @@
+.header-image {
+  background-image: url('images/pizza-surfing.gif');
+  background-repeat: no-repeat;
+  height: 250px;
+}
+
+
+/* between 768px and 1200px width */
+
+@media screen and (min-width: 768px) {
+  .header-image {
+    background-image: url('images/pizza-medium.gif');
+    height: 700px;
+  }
+}
+
+/* 1200px width and above */
+
+@media screen and (min-width: 1200px) {
+  .header-image {
+    background-image: url('images/pizza-large.gif');
+    height: 1000px;
+  }
+}
