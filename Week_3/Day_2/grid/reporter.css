@@ -1,0 +1,11 @@
+body:after{
+	content: "1024 and up"
+	font-weight: bold;
+	background-color: #dc143c;
+}
+
+@media screen and(min-width: 780px){
+	body:after{
+		background-color: #9932cc;
+	}
+}
