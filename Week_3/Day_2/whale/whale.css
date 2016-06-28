@@ -30,7 +30,7 @@ body{
     box-sizing: border-box;
     height: 300px;
     width: 500px;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #F5F5F5;
 }
 
 .bounty_size{
@@ -39,7 +39,7 @@ body{
 }
 
 .top_content{
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #F5F5F5;
 	max-width: auto;
 	margin: auto;
 }
