@@ -1,6 +1,8 @@
 body{
 	background-image: url("trello.jpg");
 	background-size: cover;
+    max-height: 100vh;
+
 }
 
 .promo-nav-button {
@@ -47,7 +49,6 @@ body{
 }
 
 .scroll{
-	overflow: auto;
 	overflow-x: scroll;
 }
 
@@ -71,7 +72,8 @@ ul{
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
-    overflow-y: auto;
+    max-height: 450px;
+    overflow: scroll;
 }
 
 .colcontent{
@@ -85,7 +87,7 @@ ul{
 
 .menucolor{
     background: #e2e4e6;
-    height: 700px;
+    height: 100vh;
 }
 
 .menucontent{
@@ -153,4 +155,67 @@ ul{
     font-family: times;
     font-size: 10px;
     color: #3b372b;
+}
+
+.labelpurple{
+    background-color: #9966FF;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #9966FF;
+    font-size: 5px;
+    height: 3px;
+    width: 20px;
+}
+
+.labelgreen{
+    background-color: #66FFCC;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #66FFCC;
+    font-size: 5px;
+    height: 3px;
+    width: 20px;
+}
+
+.labelpink{
+    background-color: #FF66CC;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #FF66CC;
+    font-size: 5px;
+    height: 3px;
+    width: 20px;
+}
+
+.labelbluelight{
+    background-color: #33CCFF;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #33CCFF;
+    font-size: 5px;
+    height: 3px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.labelorange{
+    background-color: #FF9900;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #FF9900;
+    font-size: 5px;
+    height: 3px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.labelblueroyal{
+    background-color: #3333FF;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #3333FF;
+    font-size: 5px;
+    height: 3px;
+    width: 20px;
+    margin-right: 5px;
 }
