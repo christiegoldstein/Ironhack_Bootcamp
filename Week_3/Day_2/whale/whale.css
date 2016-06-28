@@ -1,0 +1,92 @@
+body{
+	background-color: #F5F5F5;
+}
+
+.main_margin{
+	margin: 30px 0 0 50px;
+}
+
+.img_position{
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin: 10px 10px 0 15px;
+}
+
+.text_next_to_img{
+	margin-top: 20px;
+}
+
+.lightgrey_font{
+	 font-family: "Roboto";
+	 color: #aaa;
+	 font-size: 16px;
+}
+
+.post_content{
+	margin-top: 10px;
+	background-color: white;
+	border-radius: 3px;
+    box-sizing: border-box;
+    height: 300px;
+    width: 500px;
+    border-bottom: 1px solid #999;
+}
+
+.bounty_size{
+	font-family: "Roboto";
+	font-size: 20px;
+}
+
+.top_content{
+	border-bottom: 1px solid #999;
+	max-width: auto;
+	margin: auto;
+}
+
+.glys{
+	color: #F3AB4C;
+	font-size: 16px;
+}
+
+.content_margin{
+	margin: 10px 0 0 10px;
+}
+
+.button_content{
+	background-color: transparent;
+    color: #aaa;
+    font-size: 15px;
+    border-color: #aaa;
+    font-family: "Roboto";
+    margin: 0 5px 0 5px;
+   	width: 58px;
+   	padding: 3px 8px 3px 8px;
+}
+
+.now_button{
+	background-color: transparent;
+    color: 	#F80000;
+    font-size: 15px;
+    border-color: #aaa;
+    font-family: "Roboto";
+    margin: 0 5px 0 5px;
+   	width: 58px;
+   	padding: 3px 8px 3px 8px;
+}
+
+.text_content{
+	margin-top: 20px;
+	font-size: 28px;
+}
+
+.comment_button{
+	margin-top: 10px;
+	background-color: transparent;
+	color: 	#2889D8;
+    border-color: #2889D8;
+    font-size: 16px;
+    font-family: "Roboto";
+    border-radius: 24px;
+    border-width: thin;
+}
