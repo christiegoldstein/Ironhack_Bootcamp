@@ -32,7 +32,6 @@ class War{
 
 				if(saxon.health <= 0){
 					saxon_deaths++;
-					break;
 				}
 			}
 
@@ -41,7 +40,6 @@ class War{
 
 				if(viking.health <= 0){
 					viking_deaths++;
-					break;
 				}
 			}
 
