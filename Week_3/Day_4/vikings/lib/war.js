@@ -59,6 +59,9 @@ class War{
 		else if(casualties_viking < casualties_saxon){
 			console.log("Vikings Win!");
 		}
+		else if(casualties_viking === casualties_saxon){
+			console.log("Tie Game");
+		}
 		
 	}
 }
