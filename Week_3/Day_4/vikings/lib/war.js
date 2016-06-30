@@ -54,10 +54,10 @@ class War{
 		console.log("Saxon Deaths: " +casualties_saxon +"%");
 
 		if(casualties_viking > casualties_saxon){
-			console.log("Vikings Win!");
-		}
-		else if(casualties_viking > casualties_saxon){
 			console.log("Saxons Win!");
+		}
+		else if(casualties_viking < casualties_saxon){
+			console.log("Vikings Win!");
 		}
 		
 	}
