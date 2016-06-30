@@ -1,15 +1,16 @@
 
-// //clean and newer way of creating a class in JS
-// class Animal{
-// 	constructor(name, noise){
-// 		this.name = name;
-// 		this.noise = noise;
-// 	}
+//clean and newer way of creating a class in JS
+"use strict";
+class Animal{
+	constructor(name, noise){
+		this.name = name;
+		this.noise = noise;
+	}
 
-// 	shout(){
-// 		console.log("Moooo!");
-// 	}
-// }
+	shout(){
+		console.log("Moooo!");
+	}
+}
 
 // //old way of creating classes
 // function Animal(name, noise){
