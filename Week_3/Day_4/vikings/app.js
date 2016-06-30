@@ -16,7 +16,7 @@ var Astrid = new Viking("Astrid", 80, 70);
 Pit.add(Astrid);
 War.add_viking(Astrid);
 
-var Hilde = new Viking("Hilde", 70, 80);
+var Hilde = new Viking("Hilde", 60, 50);
 Pit.add(Hilde);
 War.add_viking(Hilde);
 
@@ -26,7 +26,7 @@ War.add_viking(Gudrun);
 
 Pit.fight();
 
-var Saxon1 = new Saxon(50, 50);
+var Saxon1 = new Saxon(50, 60);
 War.add_saxon(Saxon1);
 
 var Saxon2 = new Saxon(45, 50);
