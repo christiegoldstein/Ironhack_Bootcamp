@@ -7,3 +7,5 @@ class Viking{
 		this.strength = strength;
 	}
 }
+
+module.exports = Viking;

@@ -6,3 +6,5 @@ class Saxon{
 		this.strength = strength;
 	}
 }
+
+module.exports = Saxon;
