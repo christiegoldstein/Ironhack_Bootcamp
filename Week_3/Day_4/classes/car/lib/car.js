@@ -1,3 +1,4 @@
+"use strict";
 class Car {
   constructor (model, noise) {
     this.model = model;
