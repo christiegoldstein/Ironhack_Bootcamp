@@ -5,6 +5,7 @@ class Quiz{
 	constructor(){
 		this.quiz_arr = [];
 		this.i = 0;
+		this.total = 0;
 	}
 
 	add_question(question){
@@ -22,13 +23,20 @@ class Quiz{
 		if(error){
 			console.log(error.message);
 		}
+		else if(this.i === this.quiz_arr.length){
+			console.log("Score: "+this.total+" Points Earned");
+		}
 		else if(this.quiz_arr[this.i].answer === input){
 			console.log("Correct!");
+			// console.log(this.quiz_arr[this.i].points);
 			this.i++;
+			this.total += this.quiz_arr[this.i].points;
+			console.log(this.total);
 			this.take_quiz();
 		}		
 		else if(this.quiz_arr[this.i].answer !== input){
 			console.log("Incorrect! Please try again!");
+			this.total -= this.quiz_arr[this.i].points;
 			this.take_quiz();
 		}
 	}
