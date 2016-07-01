@@ -1,8 +1,8 @@
 "use strict";
 
-class Question(){
-	constructor(text, answer, id){
-		this.text = text;
+class Question{
+	constructor(question, answer, id){
+		this.question = question;
 		this.answer = answer;
 		this.id = id;
 	}
