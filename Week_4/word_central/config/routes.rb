@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-	get '/', to: 'site#home'
+	get "/", to: "site#home"
 
-	get "/text_inspections/new", to: 'text_inspections#new'
+	get "/text_inspections/new", to: "text_inspections#new"
 	
   	post "/text_inspections", to: "text_inspections#create"
 
@@ -9,4 +9,8 @@ Rails.application.routes.draw do
 
   	post "/asciis", to: "asciis#create"
 
+  	get "/quotes/new", to: "quotes#new"
+
+  	post "/quotes", to: "quotes#create"
+  	
 end

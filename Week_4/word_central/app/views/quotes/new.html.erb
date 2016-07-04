@@ -1,0 +1,14 @@
+<h1>Word Central</h1>
+
+<h2>Placeholder Quotes</h2>
+
+<form action="/quotes" method="post">
+	<input type="text" name="number" placeholder="Enter a number"><br><br>
+	<input type="radio" name="choice" value="paragraph" > Paragraph(s)<br><br>
+	<input type="radio" name="choice" value="word"> Word(s)<br><br>
+
+	<input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+  	<!-- ***** New ***** -->
+  	<button type="submit">Submit text</button>
+</form>
