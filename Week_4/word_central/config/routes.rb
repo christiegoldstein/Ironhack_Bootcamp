@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 	
 	# ***** New *****
   	post "/text_inspections", to: "text_inspections#create"
+
 end

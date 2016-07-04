@@ -7,16 +7,22 @@ class TextInspectionsController < ApplicationController
  #   		render plain: "This route is text_inspections#create."
  #  	end
 
-  	def create
-   		# ***** New *****
-    	@text = params[:text_inspection][:user_text]
+  def create
+   	# ***** New ****
 
-    	# ***** New *****
-   		@word_count = @text.split(" ").length
+  	@text = params[:text_inspection][:user_text]
 
-   		@words_per_min = (@word_count / 275).ceil
+    textins = TextInspection.new
 
-   		render 'result'
+  	@freq_arr = textins.frequency(@text)
+
+    # ***** New *****
+   	@word_count = @text.split(" ").length
+
+   	@words_per_min = (@word_count / 275).ceil
+
+   	render 'result'
+
  	end
 
 end

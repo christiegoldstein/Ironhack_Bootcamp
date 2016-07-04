@@ -6,4 +6,12 @@
 
 <p>Minutes to Read: <%= @words_per_min %></p>
 
+<p>Most Used Words</p>
+	<ol>
+		<% @freq_arr.each do |word| %>
+			<li><strong><%=word[0]%></strong> appeared <%= word[1]%> times</li>
+		<%end %>
+	</ol>
+
+
 <p>To return home, <a href="/">click here</a>.</p>
