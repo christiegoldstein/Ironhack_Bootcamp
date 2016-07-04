@@ -1,3 +1,7 @@
+.rowcolor{
+	background-color: white;
+}
+
 .nav{
 	margin-top: 10px;
 	font-style: bold;
@@ -30,4 +34,14 @@
 	color: white;
 	margin-left: 20px;
 	font-style: bold;
+}
+
+.mainpic{
+	background-image: url("iron-hack-1.jpg")
+}
+
+profilepicture{
+	height: 35px;
+	width: 35px;
+	border-radius: 5px;
 }
