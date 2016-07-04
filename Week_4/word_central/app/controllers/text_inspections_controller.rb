@@ -3,8 +3,19 @@ class TextInspectionsController < ApplicationController
 		render 'new'
 	end
 
-	# ***** New *****
+ #  	def create
+ #   		render plain: "This route is text_inspections#create."
+ #  	end
+
   	def create
-   		render plain: "This route is text_inspections#create."
-  	end
+   		# ***** New *****
+    	@text = params[:text_inspection][:user_text]
+
+    	# ***** New *****
+   		 @word_count = @text.split(" ").length
+
+   		# ***** Updated *****
+    	render plain: @word_count
+
+ 	end
 end
