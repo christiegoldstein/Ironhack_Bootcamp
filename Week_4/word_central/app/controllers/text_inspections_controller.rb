@@ -12,10 +12,11 @@ class TextInspectionsController < ApplicationController
     	@text = params[:text_inspection][:user_text]
 
     	# ***** New *****
-   		 @word_count = @text.split(" ").length
+   		@word_count = @text.split(" ").length
 
-   		# ***** Updated *****
-    	render plain: @word_count
+   		@words_per_min = (@word_count / 275).ceil
 
+   		render 'result'
  	end
+
 end
