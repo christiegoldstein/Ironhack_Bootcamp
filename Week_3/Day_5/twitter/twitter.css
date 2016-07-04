@@ -1,0 +1,33 @@
+.nav{
+	margin-top: 10px;
+	font-style: bold;
+}
+
+.logo{
+	height: 25px;
+	width: 25px;
+	margin-left: 200px;
+}
+
+.search{
+	margin-left: 180px;
+	border-radius: 15px;
+}
+
+.bar{
+	padding-left: 100px;
+}
+
+.iconpic{
+	height: 35px;
+	width: 35px;
+	border-radius: 5px;
+	margin-left: 20px;
+}
+
+.tweetbutton{
+	background-color: #48d597;
+	color: white;
+	margin-left: 20px;
+	font-style: bold;
+}
