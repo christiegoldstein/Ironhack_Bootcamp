@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
 	post("/contacts"  => "contacts#create")
 
-
+	get "/contacts/:id/show", to: "contacts#show"
 end

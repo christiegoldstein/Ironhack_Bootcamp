@@ -1,13 +1,10 @@
 <h1>Contacts</h1>
 
+<h3>Names:</h3>
 <ul>
  	<% @contacts_array.each do |contact| %>
   		<li>
-  			Name: <%= contact.name%>, 
-  			Address: <%= contact.address%>, 
-  			Phone Number: <%= contact.number%>, 
-  			E-mail Address: <%= contact.email%>
-
+  			<a href= "/contacts/<%= contact.id %>/show"><%= contact.name%></a>
   		</li>
   	<% end %>
 </ul> 
