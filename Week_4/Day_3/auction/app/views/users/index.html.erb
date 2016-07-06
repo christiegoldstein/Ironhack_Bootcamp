@@ -1,0 +1,15 @@
+<h1>Auction</h1>
+
+<h2>List of Users:</h2>
+
+<p>Click to see their products</p>
+
+<ul>
+	<% @users_array.each do |the_user| %>
+		<li>
+			<a href = "/users/<%= the_user.id %>/products"><%= the_user.name%></a>
+		</li>
+	<% end %>
+</ul>
+
+<a href="/users/new">Add a new user</a>

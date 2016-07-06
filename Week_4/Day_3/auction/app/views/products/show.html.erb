@@ -1,0 +1,9 @@
+<h1>Auction</h1>
+
+<h2>Product: <%= @my_product.title %></h2>
+
+<p>Description: <%= @my_product.description %></p>
+
+<p>Must be sold by: <%= @my_product.deadline %></p><br>
+
+<a href="/users/<%= @my_product.user_id %>/products">Return to List of Products</a>

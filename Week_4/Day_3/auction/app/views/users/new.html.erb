@@ -1,0 +1,14 @@
+<h1>Auction</h1>
+
+<h2>Add a User:</h2>
+
+
+<%= form_for @my_product do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br><br>
+
+	<%= f.label :email %>
+	<%= f.text_area :email %><br><br>
+
+	<%= f.button %>
+<% end %>

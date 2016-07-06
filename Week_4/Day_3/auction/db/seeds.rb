@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+userA = User.create(name: 'Christie', email: 'christiechristie@gmail.com')
+
+Product.create(user_id: 1, title: 'iPhone 5s', description: 'Only 3 years old with no cracks on the screen.', deadline: Time.now + 4.hours)
