@@ -8,9 +8,11 @@
 			<%= entry.date %>
 			<p><%= entry.comments %></p>
 
-			<a href ="/projects/<%= @my_project.id %>/time_entries/<%= entry.id%>/edit">
+			<a href = "/projects/<%= @my_project.id %>/time_entries/<%= entry.id%>/edit">
 				Edit the entry
 			</a>
+
+			<%= link_to("Delete", project_time_entry_path(@my_project, entry), method: :delete, data: {confirm: "Are you sure?"}) %>
 		</li>
 	<% end %>
 </ul>
