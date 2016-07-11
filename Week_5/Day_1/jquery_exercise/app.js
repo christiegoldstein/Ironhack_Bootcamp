@@ -6,5 +6,9 @@ $(document).on('ready',function(){
 
 	$('.phrase').append('<p>'+ rand +'</p>');
 
+	$('.change').on('click',function(){
+		$ ('.phrase').html('<p>'+ phrases[Math.floor(Math.random() * phrases.length)] +'</p>');
+	});
+
 });
 
