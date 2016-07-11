@@ -16,4 +16,12 @@ $ (document).on('ready',function(){
 		$ ('.green-pepper').toggle();
 	});
 
+	$ ('.btn-sauce').on('click',function(){
+		$ ('.sauce').toggleClass('sauce-white');
+	});
+
+	$ ('.btn-crust').on('click',function(){
+		$ ('.crust').toggleClass('crust-gluten-free');
+	});
+
 });
