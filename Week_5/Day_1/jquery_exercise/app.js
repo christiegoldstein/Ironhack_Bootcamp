@@ -10,20 +10,27 @@ $(document).on('ready',function(){
 		$ ('.phrase').html('<p>'+ phrases[Math.floor(Math.random() * phrases.length)] +'</p>');
 	});
 
-	// $("input").keypress(function(event) {
-	//     if (event.which == 13) {
-	//     	phrases.push($('input').val());
-	//         console.log(phrases);
-
-	//         //event.preventDefault();
-	//        // $("form").submit();
-	//     }
-	// });
-
-	$("form").submit(function() {
+	$('form').submit(function() {
 		phrases.push($('input').val());
 	    console.log(phrases); 
 		return false; 
+	});
+
+	$('a').on('click',function(){
+		if($('ol').hasClass('hide')){
+			$('ol').hide();
+			$('ol').removeClass('hide');
+		}
+		else{
+			for(var i = 0; i < phrases.length; i++){
+				$('ol').append('<li>'+phrases[i]+'</li>');
+				$('ol').append('<button>X</button>');
+			}
+			$('ol').addClass('hide');
+		}
+
+		return false;
+
 	});
 
 });
