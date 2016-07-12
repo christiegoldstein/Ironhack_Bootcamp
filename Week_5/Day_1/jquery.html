@@ -8,7 +8,31 @@
   </head>
   <body>
 
-    <div class ="container">
+    <ul>
+    </ul>
+    <button type="submit" class="list-button">
+      Click here to see list
+    </button>
+
+   <form class="js-character-form">
+    <div>
+      <input type="text" name="name" placeholder="C-3P0" class="name">
+    </div>
+
+    <div>
+      <input type="text" name="occupation" placeholder="Protocol Driod" class="occupation">
+    </div>
+
+    <div>
+      <input type="text" name="weapon" placeholder="Comic Relief" class="weapon">
+    </div>
+
+      <button type="submit">
+        Create new character
+      </button>
+    </form>
+
+    <!-- <div class ="container">
       <h1>AJAX</h1>
     </div>
 
@@ -26,7 +50,7 @@
           var httpRequest = event.currentTarget;
           if(httpRequest.readyState === 4){
             if(httpRequest.status === 200){
-              console.log('--- without jQuery ---');
+              console.log('- without jQuery -');
               showCharacters(JSON.parse(httpRequest.responseText));
             }
             else{
@@ -48,7 +72,7 @@
       });
 
 
-    </script>
+    </script> -->
 <!-- 
       <div class="to_fade">
         <p>I like pizza.</p>
