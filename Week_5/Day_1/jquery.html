@@ -8,6 +8,48 @@
   </head>
   <body>
 
+    <div class ="container">
+      <h1>AJAX</h1>
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        function fetchCharacters(){
+          var httpRequest = new XMLHttpRequest();
+          httpRequest.open("Get","https://ironhack-characters.herokuapp.com/characters");
+          httpRequest.onreadystatechange = handleResponse;
+          httpRequest.send();
+        }
+
+        function handleResponse(event){
+          var httpRequest = event.currentTarget;
+          if(httpRequest.readyState === 4){
+            if(httpRequest.status === 200){
+              console.log('--- without jQuery ---');
+              showCharacters(JSON.parse(httpRequest.responseText));
+            }
+            else{
+              alert("There was an error");
+            }
+          }
+        }
+
+        function showCharacters(charactersArray){
+          charactersArray.forEach(function(theCharacter){
+            var html = '<h1>' + theCharacter.name + '</h1>';
+            $('.container').append(html);
+            console.log(theCharacter);
+          });
+        }
+
+        fetchCharacters();
+
+      });
+
+
+    </script>
+<!-- 
       <div class="to_fade">
         <p>I like pizza.</p>
         <p>I like tacos.</p>
@@ -20,6 +62,6 @@
       <div class="unicorn-mode">
         <button class="unicorn-button">Unicorn Mode</button>
       </div>
-
+ -->
   </body>
 </html>
