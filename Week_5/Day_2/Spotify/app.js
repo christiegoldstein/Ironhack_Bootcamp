@@ -32,6 +32,7 @@ $(document).on('ready',function(){
 		$(".album_link").on("click", function(event){
 			//console.log($("a").attr("data"));
 			event.preventDefault();
+
 		    $(".albums_modal").modal("show");
 
 			var id = $(event.currentTarget).attr("data");
@@ -71,6 +72,7 @@ $(document).on('ready',function(){
 		$(".track_link").on("click", function(event){
 			//console.log($("a").attr("data"));
 			event.preventDefault();
+			$(".albums_modal").modal("hide");
 		    $(".tracks_modal").modal("show");
 
 			var id = $(event.currentTarget).attr("data");
@@ -92,16 +94,17 @@ $(document).on('ready',function(){
 			if(tracks.items[i].name != null){
 				var track_name = tracks.items[i].name;
 				console.log(track_name);
-				var track_id = tracks.items[i].id;
+				var track_preview = tracks.items[i].preview_url;
 				var track_list = `
 					<ul>
 						<li>	
-							<h4>${track_name}</h4>
+							<h4><a href=${track_preview} target='_blank'>${track_name}</h4>
 						</li>
 					</ul>
 				`;
 				$(".body_track").append(track_list);
 			}	
 		}
+
 	}
 });
