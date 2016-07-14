@@ -13,7 +13,7 @@ PokemonApp.Pokemon = class {
 			url: "/api/pokemon/" + this.id,
 			success: function(response){
 				//console.log("Pokemon info:");
-				//console.log(response);
+				console.log(response);
 
 				var header = `
 					<span>${response.name}</span>
@@ -32,6 +32,13 @@ PokemonApp.Pokemon = class {
 				description(response);
 				$(".js-pokemon-modal").modal("show");
 
+				$(".see-move").on("click", function(event){
+					event.preventDefault();
+					$(".js-pokemon-modal").modal("hide");
+					$(".js-moves-modal").modal("show");
+					moves(response);
+				});
+
 				$(".see-evo").on("click", function(event){
 					event.preventDefault();
 					$(".js-pokemon-modal").modal("hide");
@@ -48,7 +55,7 @@ PokemonApp.Pokemon = class {
 			for(var i = 0; i < response.types.length; i ++){
 				if(response.types[i].name != undefined){
 					//console.log(response.types[i].name);
-					$(".js-type").append(response.types[i].name);
+					$(".js-type").append(response.types[i].name+" ");
 				}
 			}
 
@@ -116,7 +123,7 @@ PokemonApp.Pokemon = class {
 			$.ajax({
 				url: sprite_uri,
 				success: function(response){
-					console.log(response);
+					//console.log(response);
 					$(".js-spriteimg-evo").html(`<img src="http://pokeapi.co${response.image}">`);
 				}
 			});
@@ -124,6 +131,40 @@ PokemonApp.Pokemon = class {
 			$(".evo-button").on("click", function(){
 				$(".js-evolution-modal").modal("hide");
 				$(".js-pokemon-modal").modal("show");
+			});
+		}
+
+		function moves(response){
+			$(".js-moves-list").empty();
+			var moves_arr = response.moves;
+
+			for(var i = 0; i < moves_arr.length; i++){
+				if(moves_arr[i].learn_type === "level up" && moves_arr[i].level === 1){
+					power(moves_arr[i]);
+				}
+			}
+
+			$(".moves-button").on("click", function(){
+				$(".js-moves-modal").modal("hide");
+				$(".js-pokemon-modal").modal("show");
+			});
+		}
+
+		function power(response){
+			var power_uri = response.resource_uri;
+
+			$.ajax({
+				url: power_uri,
+				success: function(response){
+					console.log(response);
+					$(".js-moves-list").append(`
+						<li>
+							${response.name}
+							<p>Power: ${response.power}</p>
+							<p>PP: ${response.pp}</p>
+						</li>
+					`);
+				}
 			});
 		}
 	}
