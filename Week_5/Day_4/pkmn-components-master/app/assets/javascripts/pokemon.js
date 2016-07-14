@@ -29,6 +29,7 @@ PokemonApp.Pokemon = class {
 				$(".js-atk").text(response.sp_atk);
 				$(".js-def").text(response.sp_def);
 				type(response);
+				description(response);
 				$(".js-pokemon-modal").modal("show");
 			}
 		});
@@ -41,6 +42,46 @@ PokemonApp.Pokemon = class {
 					$(".js-type").append(response.types[i].name);
 				}
 			}
+
+			var sprite = response.sprites[0].resource_uri;
+
+			$.ajax({
+				url: sprite,
+				success: function(response){
+					//console.log(response);
+					$(".js-spriteimg").html(`<img src="http://pokeapi.co${response.image}">`);
+
+				}
+			});
+
+		}
+
+		function description(response){
+			$(".js-descrip").empty();
+
+			var des_arr = response.descriptions;
+	
+			des_arr.sort(function(des1, des2){
+				var a = des1.name.split("_");
+				var b = des2.name.split("_");
+
+				var last_a = parseInt(a[a.length-1]);
+				var last_b = parseInt(b[b.length-1]);
+
+				return last_a - last_b
+			});
+
+			var newest_description_uri = des_arr[des_arr.length - 1].resource_uri;
+
+			$.ajax({
+				url: newest_description_uri,
+				success: function(response){
+					//console.log(response);
+					$(".js-descrip").text(response.description);
+
+				}
+			});
+
 		}
 	}
 }
