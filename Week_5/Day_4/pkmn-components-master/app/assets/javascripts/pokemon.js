@@ -12,8 +12,8 @@ PokemonApp.Pokemon = class {
 		$.ajax({
 			url: "/api/pokemon/" + this.id,
 			success: function(response){
-				console.log("Pokemon info:");
-				console.log(response);
+				//console.log("Pokemon info:");
+				//console.log(response);
 
 				var header = `
 					<span>${response.name}</span>
@@ -31,6 +31,15 @@ PokemonApp.Pokemon = class {
 				type(response);
 				description(response);
 				$(".js-pokemon-modal").modal("show");
+
+				$(".see-evo").on("click", function(event){
+					event.preventDefault();
+					$(".js-pokemon-modal").modal("hide");
+		    		$(".js-evolution-modal").modal("show");
+		    		type(response);
+		    		evolution(response);
+
+				});
 			}
 		});
 
@@ -82,6 +91,40 @@ PokemonApp.Pokemon = class {
 				}
 			});
 
+		}
+
+		function evolution(response){
+			//console.log(response);
+			$(".non-evo").text(response.name);
+			$(".evo").text(response.evolutions[0].to);
+
+			var evo_sprite_uri = response.evolutions[0].resource_uri;
+
+			//console.log(evo_sprite_uri);
+			$.ajax({
+				url: evo_sprite_uri,
+				success: function(response){
+					//console.log(response);
+					get_evolution_sprite(response);
+				}
+			});
+		}
+
+		function get_evolution_sprite(response){
+			var sprite_uri = response.sprites[0].resource_uri;
+			//console.log(sprite_uri);
+			$.ajax({
+				url: sprite_uri,
+				success: function(response){
+					console.log(response);
+					$(".js-spriteimg-evo").html(`<img src="http://pokeapi.co${response.image}">`);
+				}
+			});
+
+			$(".evo-button").on("click", function(){
+				$(".js-evolution-modal").modal("hide");
+				$(".js-pokemon-modal").modal("show");
+			});
 		}
 	}
 }

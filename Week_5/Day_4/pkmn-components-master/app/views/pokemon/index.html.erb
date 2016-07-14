@@ -61,7 +61,7 @@
               <dd class="js-type">00</dd>
 
             </div>
-            <div style="padding-left: 20px">
+            <div style="padding-left: 50px">
               <dd class="js-spriteimg"></dd>
             </div>
 
@@ -69,10 +69,38 @@
               <dt>Description</dt>
               <dd class="js-descrip"></dd>
             </div>
-
+            <button type="button" class="btn btn-primary see-evo">See Evolutions</button>
           </dl>
       </div><!-- .modal-body -->
 
     </div><!-- .modal-content -->
   </div><!-- .modal-dialog -->
 </div><!-- .modal -->
+
+<div class="modal fade js-evolution-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Evolution</h4>
+            </div>
+            <div class="modal-body body_track">
+                <div class="col-sm-3">
+                   <dt class="non-evo" style="padding-left: 40px"></dt>
+                   <dd class="js-spriteimg"></dd>
+                </div>
+                <div class="col-sm-2" style="padding-left: 50px">
+                   <p> &#8594</p>
+                </div>
+                <div class="col-sm-3" style="padding-left: 70px">
+                   <dt class="evo"></dt>
+                   <dd class="js-spriteimg-evo"></dd>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default evo-button" data-dismiss="modal">Back</button>
+        
+            </div>
+        </div>
+    </div>
+</div>
