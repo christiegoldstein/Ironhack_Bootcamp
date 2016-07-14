@@ -28,11 +28,20 @@ PokemonApp.Pokemon = class {
 				$(".js-speed").text(response.speed);
 				$(".js-atk").text(response.sp_atk);
 				$(".js-def").text(response.sp_def);
-
-
+				type(response);
 				$(".js-pokemon-modal").modal("show");
 			}
 		});
+
+		function type(response){
+			$(".js-type").empty();
+			for(var i = 0; i < response.types.length; i ++){
+				if(response.types[i].name != undefined){
+					//console.log(response.types[i].name);
+					$(".js-type").append(response.types[i].name);
+				}
+			}
+		}
 	}
 }
 
