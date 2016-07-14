@@ -22,6 +22,13 @@ PokemonApp.Pokemon = class {
 				$(".modal-title").html(header);
 				$(".js-height").text(response.height);
 				$(".js-weight").text(response.weight);
+				$(".js-attack").text(response.attack);
+				$(".js-defense").text(response.defense);
+				$(".js-hp").text(response.hp);
+				$(".js-speed").text(response.speed);
+				$(".js-atk").text(response.sp_atk);
+				$(".js-def").text(response.sp_def);
+
 
 				$(".js-pokemon-modal").modal("show");
 			}
