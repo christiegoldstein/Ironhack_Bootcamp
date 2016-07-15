@@ -17,6 +17,10 @@
    		<button type="submit">Search</button>
   	</form>
 
+  	<br/>
+  	<br/>
+  	<button type="submit" class="js-more-results">View More Search Results</button>
+
 	<div class="widget">
 		<div class="header">
 		<!-- Try adding/removing these classes: -->
@@ -68,6 +72,30 @@
              				
            				</div>
            			</dl>
+	        	</div>
+
+		       	<div class="modal-footer">
+		          	<button type="button" class="btn btn-default artist-button" data-dismiss="modal">Close</button>
+		        
+		        </div>
+		    </div>
+	    </div>
+	</div>
+
+
+	<div class="modal fade js-more-tracks-modal">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title">Other Search Results</h4>
+	            </div>
+	            <div class="modal-body track-body">
+					<dl class="dl-horizontal">
+						<ul class="js-track-list">
+							
+						</ul>
+					</dl>
 	        	</div>
 
 	       	<div class="modal-footer">

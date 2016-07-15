@@ -5,10 +5,16 @@ $(document).on("ready", function(){
 
 		var track = $(".js-tracks-input").val();
 
-		//console.log(track);
+		getTrack(track);
+	});
+
+	function getTrack(track){
 		$.ajax({
-			url: `https://api.spotify.com/v1/search?type=track&limit=1&q=${track}`,
+			//https://api.spotify.com/v1/search?type=track&limit=1&q=${track}
+			url: `https://api.spotify.com/v1/search?type=track&q=${track}`,
 			success: function(response){
+
+				console.log(response);
 				//song name
 
 				$(".title").text(response.tracks.items[0].name);
@@ -45,6 +51,7 @@ $(document).on("ready", function(){
 
 				$(".artist-link").on("click",function(event){
 					event.preventDefault();
+					// $(".js-more-tracks-modal").modal("hide");
 					$(".js-artist-modal").modal("show");
 					var link = `https://api.spotify.com/v1/search?type=artist&query=${artist_name}`;
 						$.ajax({
@@ -56,7 +63,35 @@ $(document).on("ready", function(){
 				});
 			}
 		});
+	}
+
+
+	$(".js-more-results").on("click", function(event){
+		event.preventDefault();
+		var track = $(event.currentTarget).attr("data");
+		$.ajax({
+			//https://api.spotify.com/v1/search?type=track&limit=1&q=${track}
+			url: `https://api.spotify.com/v1/search?type=track&q=${track}`,
+			success: function(response){
+				// $(".js-artist-modal").modal("hide");
+				$(".js-more-tracks-modal").modal("show");
+				for(var i = 0; i < response.tracks.items.length; i++){
+					more_search_results(response.tracks.items[i]);
+				}
+				//$(".js-more-tracks-modal").modal("show");
+
+				$(".js-track-from-list").on("click", function(event){
+					event.preventDefault();
+
+					var track = $(event.currentTarget).attr("data");
+
+					getTrack(track);
+					$(".js-track-list").empty();
+				});
+			}
+		});
 	});
+	
 
 	// Define a function to print the player's current time
 	function printTime(){
@@ -68,7 +103,7 @@ $(document).on("ready", function(){
 
 	function artistInfo(response){
 		$(".js-genres").empty();
-		console.log(response);
+		//console.log(response);
 		//name
 		$(".js-name").text(response.artists.items[0].name);
 		//photo
@@ -91,6 +126,13 @@ $(document).on("ready", function(){
 
 	}
 
-
+	function more_search_results(response){
+		//console.log(response.name);
+		$(".js-track-list").append(`
+			<li><a href="#" data=${response.name} class="js-track-from-list">${response.name}</a></li>
+			<p>Artist: ${response.artists[0].name}</p>
+			<p>Album: ${response.album.name}</p>
+		`);
+	}
 
 });
