@@ -14,7 +14,9 @@ $(document).on("ready", function(){
 				$(".title").text(response.tracks.items[0].name);
 
 				//artist name
-				$(".author").text(response.tracks.items[0].artists[0].name);
+
+				var artist_name = response.tracks.items[0].artists[0].name;
+				$(".author").html(`<a href="#" class="artist-link">${artist_name}</a>`);
 
 				//album image
 				$(".cover").html(`<img src=${response.tracks.items[0].album.images[1].url}>`);
@@ -31,6 +33,8 @@ $(document).on("ready", function(){
 						$(".btn-play").removeClass("disabled");
 						$(".btn-play").addClass("playing");
 						$(".js-player").trigger("play");
+						// Have printTime be called when the time is updated
+						$('.js-player').on('timeupdate', printTime);
 					}
 					else if($(".btn-play").hasClass("playing")){
 						$(".btn-play").removeClass("playing");
@@ -38,8 +42,55 @@ $(document).on("ready", function(){
 						$(".js-player").trigger("pause");
 					}
 				});
+
+				$(".artist-link").on("click",function(event){
+					event.preventDefault();
+					$(".js-artist-modal").modal("show");
+					var link = `https://api.spotify.com/v1/search?type=artist&query=${artist_name}`;
+						$.ajax({
+							type: "GET",
+							url: link,
+							success: artistInfo
+
+						});
+				});
 			}
 		});
 	});
+
+	// Define a function to print the player's current time
+	function printTime(){
+	  var current = $('.js-player').prop('currentTime');
+	  $("progress").attr("value", current);
+	  //console.log($("progress").attr("value"));
+	  //console.debug('Current time: ' + current);
+	}
+
+	function artistInfo(response){
+		$(".js-genres").empty();
+		console.log(response);
+		//name
+		$(".js-name").text(response.artists.items[0].name);
+		//photo
+		$(".js-photo").html(`<img src=${response.artists.items[0].images[1].url} class="artist-img">`);
+		//genres
+		var genres_arr = response.artists.items[0].genres;
+		for(var i = 0; i < genres_arr.length; i++){
+			if(i === genres_arr.length - 1){
+				$(".js-genres").append(response.artists.items[0].genres[i]);
+			}
+			else{
+
+				$(".js-genres").append(response.artists.items[0].genres[i] + ", ");
+			}
+		}
+		//followers
+		$(".js-followers").text(response.artists.items[0].followers.total);
+		//popularity
+		$(".js-popularity").text(response.artists.items[0].popularity);
+
+	}
+
+
 
 });

@@ -3,6 +3,8 @@
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="spotify.js"></script>
 </head>
@@ -27,7 +29,7 @@
 		  <p class="author">alt-J</p>
 
 		  <div class="seekbar">
-		    <progress value="5" max="30"></progress>
+		    <progress value="0" max="30"></progress>
 		  </div>
 		</div>
 		</div>
@@ -36,6 +38,43 @@
 		</div>
 
 		<audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31" class="js-player"></audio>
+	</div>
+
+	<div class="modal fade js-artist-modal">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title">Artist</h4>
+	            </div>
+	            <div class="modal-body artist-body">
+					<dl class="dl-horizontal">
+						<div class="artist-info">
+             				<dt>Name</dt>
+             				<dd class ="js-name">Drake</dd>
+
+             				<dt>Genres</dt>
+             				<dd class="js-genres"></dd>
+
+             				<dt>Followers</dt>
+             				<dd class="js-followers">1000000</dd>
+
+              				<dt>Popularity</dt>
+              				<dd class="js-popularity"></dd>
+
+	            		</div>
+
+	            		<div class="js-photo">
+             				
+           				</div>
+           			</dl>
+	        	</div>
+
+	       	<div class="modal-footer">
+	          	<button type="button" class="btn btn-default artist-button" data-dismiss="modal">Close</button>
+	        
+	        </div>
+	    </div>
 	</div>
 
 </body>
