@@ -42,6 +42,15 @@ class SandwichesController < ApplicationController
 		head :no_content
 	end
 
+	def createIngredient
+		sandwich = Sandwich.find_by(id: params[:id])
+		ingredient = Ingredient.find_by(name: params[:name])
+		if ingredient != nil
+			sandwich.ingredients.push(ingredient)
+		end
+		render json: ingredient
+	end
+
 	private
 	def sandwich_params
 		params.require(:sandwich).permit(:name, :bread_type)
