@@ -5,7 +5,7 @@ class IngredientsController < ApplicationController
 	end
 
 	def destroy
-		ingredient = Ingredient.find_by(id: params[id])
+		ingredient = Ingredient.find_by(id: params[:id])
 		unless ingredient
 			render json: {error: "ingredient not found"}, status: 404
 		end
@@ -14,7 +14,7 @@ class IngredientsController < ApplicationController
 	end
 
 	def show
-		ingreient = Ingredient.find_by(id: params[id])
+		ingreient = Ingredient.find_by(id: params[:id])
 		unless ingredient
 			render json: {error: "ingredient not found"}, status: 404
 		end
