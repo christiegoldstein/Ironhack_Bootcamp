@@ -14,3 +14,27 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on("ready", function(){
+	$(".js-ingred").on("click", function(event){
+		event.preventDefault();
+
+		var sandwich_id = $(".js-sandwich").attr("data");
+		console.log(sandwich_id);
+		var ingredientData = {
+			ingredient_id: $(event.currentTarget).attr("data")
+		};
+
+		$.ajax({
+			type: "post",
+			url: `/api/sandwiches/${sandwich_id}/ingredients/add`,
+			data: ingredientData,
+			success: function(response){ 
+				$(".js-ingred-list").append(`
+					<li>${response.name}</li>
+				`);
+				console.log("here");
+			}
+		});
+	});
+});
+

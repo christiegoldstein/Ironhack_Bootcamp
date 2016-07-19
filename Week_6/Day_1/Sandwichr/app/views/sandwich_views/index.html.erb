@@ -2,6 +2,6 @@
 
 <ul>
 	<% @sandwiches.each do |sandwich| %>
-		<li><%= sandwich.name %></li>
+		<li><%= link_to sandwich.name, "/sandwiches/#{sandwich.id}" %></a></li>
 	<% end %>
 </ul>

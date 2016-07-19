@@ -42,9 +42,9 @@ class SandwichesController < ApplicationController
 		head :no_content
 	end
 
-	def createIngredient
-		sandwich = Sandwich.find_by(id: params[:id])
-		ingredient = Ingredient.find_by(name: params[:name])
+	def add_ingredient
+		sandwich = Sandwich.find_by(id: params[:sandwich_id])
+		ingredient = Ingredient.find_by(id: params[:ingredient_id])
 		if ingredient != nil
 			sandwich.ingredients.push(ingredient)
 		end
