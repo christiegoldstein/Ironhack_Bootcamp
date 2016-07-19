@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
-
+  before_action :authorize_user, only: [:show]
   # renders the home page
-def home
-  @name = current_user ? @current_user.username : "Ironhacker"
-end
+  def home
+
+    @name = current_user ? @current_user.username : "Ironhacker"
+  end
 
   def index
     @users = User.all
@@ -29,7 +30,7 @@ end
   private
 
   def user_params
-     params.require(:user).permit(:username, :email)
+     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 
 end
