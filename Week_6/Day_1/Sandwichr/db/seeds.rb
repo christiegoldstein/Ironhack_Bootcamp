@@ -16,8 +16,10 @@ ingredientC = Ingredient.create(name: "Meatballs", calories: 150)
 ingredientD = Ingredient.create(name: "Chicken", calories: 120)
 
 sandwich_ingredientA = SandwichIngredient.create(sandwich_id: sandwichA.id, ingredient_id: ingredientA.id)
+sandwichA.ingredients.push(ingredientA)
 sandwich_ingredientB = SandwichIngredient.create(sandwich_id: sandwichA.id, ingredient_id: ingredientB.id)
 sandwich_ingredientC = SandwichIngredient.create(sandwich_id: sandwichB.id, ingredient_id: ingredientC.id)
 sandwich_ingredientD = SandwichIngredient.create(sandwich_id: sandwichC.id, ingredient_id: ingredientD.id)
+
 
 puts("DONE!")
