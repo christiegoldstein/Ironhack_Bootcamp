@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-	resources :sandwiches, only: [:index, :show], controller: "sandwich_views"
+  devise_for :users
+  	get "/users/:id" => "sandwich_views#index"
+  	scope "/users/:id" do 
+  		resources :sandwiches, only: [:index, :show], controller: "sandwich_views"
+  	end
+	
   	scope "/api" do
     	resources :ingredients, only: [:create, :destroy, :show]
   		resources :sandwiches, except: [:new, :edit]

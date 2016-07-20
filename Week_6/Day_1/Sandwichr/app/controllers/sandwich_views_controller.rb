@@ -1,6 +1,7 @@
 class SandwichViewsController < ApplicationController
 	def index
-		@sandwiches = Sandwich.all 
+		@sandwiches = Sandwich.all
+		@user = User.find(params[:id]) 
 	end
 
 	def show 
