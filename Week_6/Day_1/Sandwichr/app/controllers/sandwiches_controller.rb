@@ -1,6 +1,5 @@
 class SandwichesController < ApplicationController
 	def index
-		@user = User.find(params[:id])
 		sandwiches = Sandwich.all 
 		render json: sandwiches
 	end
